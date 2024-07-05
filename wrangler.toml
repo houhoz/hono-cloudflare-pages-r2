@@ -1,0 +1,21 @@
+name = "hono-cloudflare-pages-r2"
+pages_build_output_dir = "./dist"
+
+[vars]
+MY_JWT_SECRET = "my_hono_jwt_secret"
+
+# [[kv_namespaces]]
+# binding = "MY_KV_NAMESPACE"
+# id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+
+[[r2_buckets]]
+binding = "MY_BUCKET"
+bucket_name = "memos"
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "hono-prisma-db"
+database_id = "d8ccb036-b3f4-440d-a3c3-d0adada52e44"
+
+# [ai]
+# binding = "AI"
