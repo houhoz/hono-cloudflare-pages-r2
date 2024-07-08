@@ -7,7 +7,10 @@
     "preview": "wrangler pages dev",
     "deploy": "pnpm run css:build && $npm_execpath run build && wrangler pages deploy",
     "css:watch": "tailwindcss -i ./src/index.css -o ./public/static/style.css --watch",
-    "css:build": "tailwindcss -i ./src/index.css -o ./public/static/style.css --minify"
+    "css:build": "tailwindcss -i ./src/index.css -o ./public/static/style.css --minify",
+    "migration:generate": "drizzle-kit generate",
+    "migration:apply:local": "wrangler d1 migrations apply my-app-actions --local",
+    "migration:apply:remote": "wrangler d1 migrations apply my-app-actions --remote"
   },
   "dependencies": {
     "@prisma/adapter-d1": "^5.16.1",
